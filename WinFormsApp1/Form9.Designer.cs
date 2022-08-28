@@ -33,27 +33,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserPhoneNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.UserID,
-            this.UserName,
-            this.UserPassword,
-            this.UserPhoneNo,
-            this.UserEmail});
-            this.dataGridView1.Location = new System.Drawing.Point(190, 88);
+            this.dataGridView1.Location = new System.Drawing.Point(336, 92);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(541, 295);
@@ -63,7 +57,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(456, 26);
+            this.label1.Location = new System.Drawing.Point(485, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 40);
             this.label1.TabIndex = 1;
@@ -71,25 +65,27 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(64, 125);
+            this.button1.Location = new System.Drawing.Point(12, 384);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(64, 188);
+            this.button2.Location = new System.Drawing.Point(189, 384);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Remove";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(64, 246);
+            this.button3.Location = new System.Drawing.Point(12, 462);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
@@ -97,18 +93,9 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(363, 214);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Edit";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(42, 301);
+            this.button5.Location = new System.Drawing.Point(153, 462);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(111, 23);
             this.button5.TabIndex = 6;
@@ -117,46 +104,77 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(456, 398);
+            this.button6.Location = new System.Drawing.Point(560, 449);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 7;
             this.button6.Text = "Back";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // UserID
+            // textBox1
             // 
-            this.UserID.HeaderText = "UserID";
-            this.UserID.Name = "UserID";
+            this.textBox1.Location = new System.Drawing.Point(30, 131);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "UserName";
+            this.textBox1.Size = new System.Drawing.Size(149, 23);
+            this.textBox1.TabIndex = 8;
             // 
-            // UserName
+            // textBox2
             // 
-            this.UserName.HeaderText = "UserName";
-            this.UserName.Name = "UserName";
+            this.textBox2.Location = new System.Drawing.Point(30, 76);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PlaceholderText = "UserID";
+            this.textBox2.Size = new System.Drawing.Size(149, 23);
+            this.textBox2.TabIndex = 9;
             // 
-            // UserPassword
+            // label2
             // 
-            this.UserPassword.HeaderText = "UserPassword";
-            this.UserPassword.Name = "UserPassword";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 25);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Create new users";
             // 
-            // UserPhoneNo
+            // textBox3
             // 
-            this.UserPhoneNo.HeaderText = "UserPhoneNo";
-            this.UserPhoneNo.Name = "UserPhoneNo";
+            this.textBox3.Location = new System.Drawing.Point(30, 188);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PlaceholderText = "UserEmail";
+            this.textBox3.Size = new System.Drawing.Size(149, 23);
+            this.textBox3.TabIndex = 11;
             // 
-            // UserEmail
+            // textBox4
             // 
-            this.UserEmail.HeaderText = "UserEmail";
-            this.UserEmail.Name = "UserEmail";
+            this.textBox4.Location = new System.Drawing.Point(30, 238);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.PlaceholderText = "UserPhone";
+            this.textBox4.Size = new System.Drawing.Size(149, 23);
+            this.textBox4.TabIndex = 12;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(30, 294);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.PlaceholderText = "UserPassword";
+            this.textBox5.Size = new System.Drawing.Size(149, 23);
+            this.textBox5.TabIndex = 13;
             // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 535);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -177,13 +195,13 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private DataGridViewTextBoxColumn UserID;
-        private DataGridViewTextBoxColumn UserName;
-        private DataGridViewTextBoxColumn UserPassword;
-        private DataGridViewTextBoxColumn UserPhoneNo;
-        private DataGridViewTextBoxColumn UserEmail;
-        private Button button4;
         private Button button5;
         private Button button6;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Label label2;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private TextBox textBox5;
     }
 }

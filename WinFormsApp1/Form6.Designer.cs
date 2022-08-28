@@ -42,7 +42,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::InventoryManagement.Properties.Resources.shop1;
+            this.pictureBox1.Image = global::WinFormsApp1.Properties.Resources.shop1;
             this.pictureBox1.Location = new System.Drawing.Point(306, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(184, 148);
@@ -69,6 +69,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 
@@ -79,6 +80,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label2
             // 

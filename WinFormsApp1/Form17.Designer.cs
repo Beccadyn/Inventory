@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class Form13
+    partial class Form17
     {
         /// <summary>
         /// Required designer variable.
@@ -30,78 +30,69 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(311, 9);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(244, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 45);
+            this.label1.Size = new System.Drawing.Size(316, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "SALES RECEIPT";
+            this.label1.Text = "STOCK MANAGEMENT";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(142, 74);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductID,
+            this.ProductName,
+            this.Quantity});
+            this.dataGridView1.Location = new System.Drawing.Point(244, 71);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(646, 311);
+            this.dataGridView1.Size = new System.Drawing.Size(338, 286);
             this.dataGridView1.TabIndex = 1;
             // 
-            // button1
+            // ProductID
             // 
-            this.button1.Location = new System.Drawing.Point(384, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Print";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ProductID.HeaderText = "ProductID";
+            this.ProductID.Name = "ProductID";
             // 
-            // textBox1
+            // ProductName
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "CusID";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 3;
+            this.ProductName.HeaderText = "ProductName";
+            this.ProductName.Name = "ProductName";
             // 
-            // textBox2
+            // Quantity
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 160);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "CusName";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 4;
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
             // 
-            // textBox3
+            // comboBox1
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 238);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "Total Price";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 5;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(34, 104);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 2;
             // 
-            // Form13
+            // Form17
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Name = "Form13";
-            this.Text = "Form13";
+            this.Name = "Form17";
+            this.Text = "Form17";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -112,9 +103,9 @@
 
         private Label label1;
         private DataGridView dataGridView1;
-        private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private DataGridViewTextBoxColumn ProductID;
+        private DataGridViewTextBoxColumn ProductName;
+        private DataGridViewTextBoxColumn Quantity;
+        private ComboBox comboBox1;
     }
 }

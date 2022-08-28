@@ -79,7 +79,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(32, 206);
+            this.label1.Location = new System.Drawing.Point(26, 206);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 15);
             this.label1.TabIndex = 4;
@@ -97,6 +97,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 

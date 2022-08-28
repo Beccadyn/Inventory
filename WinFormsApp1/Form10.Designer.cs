@@ -30,10 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,36 +47,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductName,
-            this.ProductCategory,
-            this.ProductPrice,
-            this.TotalPrice});
             this.dataGridView1.Location = new System.Drawing.Point(195, 77);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(440, 299);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // ProductName
-            // 
-            this.ProductName.HeaderText = "ProductName";
-            this.ProductName.Name = "ProductName";
-            // 
-            // ProductCategory
-            // 
-            this.ProductCategory.HeaderText = "ProductCategory";
-            this.ProductCategory.Name = "ProductCategory";
-            // 
-            // ProductPrice
-            // 
-            this.ProductPrice.HeaderText = "ProductPrice";
-            this.ProductPrice.Name = "ProductPrice";
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.HeaderText = "TotalPrice";
-            this.TotalPrice.Name = "TotalPrice";
             // 
             // Form10
             // 
@@ -101,9 +72,5 @@
 
         private Label label1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn ProductName;
-        private DataGridViewTextBoxColumn ProductCategory;
-        private DataGridViewTextBoxColumn ProductPrice;
-        private DataGridViewTextBoxColumn TotalPrice;
     }
 }

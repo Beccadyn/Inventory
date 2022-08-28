@@ -36,6 +36,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@
             this.button7.TabIndex = 6;
             this.button7.Text = "Settings";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -72,6 +74,7 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "Users";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -90,6 +93,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Sales Report";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -99,6 +103,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Products";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -108,6 +113,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Product Category";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -124,6 +130,17 @@
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button8.Location = new System.Drawing.Point(410, 410);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(84, 28);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "Logout";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Form5
             // 
             this.AllowDrop = true;
@@ -131,6 +148,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.panel1);
             this.Name = "Form5";
             this.Text = "Form5";
@@ -149,5 +167,6 @@
         private Button button7;
         private Button button6;
         private Button button5;
+        private Button button8;
     }
 }

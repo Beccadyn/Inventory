@@ -1,5 +1,4 @@
-﻿using InventoryManagement;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,18 +10,11 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class Form11 : Form
+    public partial class Form16 : Form
     {
-        public Form11()
+        public Form16()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form5 form5 = new Form5();
-            form5.Show();
-            Visible = false;
         }
     }
 }

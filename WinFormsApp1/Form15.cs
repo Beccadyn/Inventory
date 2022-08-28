@@ -16,5 +16,26 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form10 form10 = new Form10();
+            form10.Show();
+            Visible = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form16 form16 = new Form16();
+            form16.Show();
+            Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            Visible = false;
+        }
     }
 }
