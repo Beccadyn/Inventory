@@ -64,12 +64,13 @@ namespace WinFormsApp1
                     }
                     else
                     {
-                        string query = "insert into product(ProductID, ProductName, ProductQuantity, ProductCategory, ProductPrice) values ('" + textBox1.Text + "', '" + textBox2.Text + "','" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "')";
+                        string query = "insert into product(ProductID, ProductName, ProductCategory, ProductQuantity, ProductPrice) values ('" + textBox1.Text + "', '" + textBox2.Text + "','" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "')";
                         command = new MySqlCommand(query, DatabaseClass.connection);
                         command.ExecuteNonQuery();
                         MessageBox.Show("New product added succesfully!");
                         
                         DatabaseClass.closeConnection();
+                        fetchProduct();
                     }
                 }
                 catch (Exception st)
@@ -97,7 +98,7 @@ namespace WinFormsApp1
         {
             DatabaseClass.openConnection();
             MySqlCommand command;
-            if (textBox1.Text != "" & textBox2.Text != "")
+            if (textBox1.Text != "")
             {
                 try
                 {
@@ -106,12 +107,13 @@ namespace WinFormsApp1
                     Int32 count = Convert.ToInt32(command.ExecuteScalar());
                     if (count > 0)
                     {
-                        string query = "delete from product where ProductID= '" + textBox1.Text + "')";
+                        string query = "delete from product where ProductID= '" + textBox1.Text + "' ";
                         command = new MySqlCommand(query, DatabaseClass.connection);
                         command.ExecuteNonQuery();
                         MessageBox.Show("Product is removed!");
                         
                         DatabaseClass.closeConnection();
+                        fetchProduct();
                     }
                     else
                     {
@@ -137,7 +139,7 @@ namespace WinFormsApp1
         {
             DatabaseClass.openConnection();
             MySqlCommand command;
-            if (textBox1.Text != "" & textBox2.Text != "")
+            if (textBox1.Text != "" )
             {
                 try
                 {
@@ -146,12 +148,13 @@ namespace WinFormsApp1
                     Int32 count = Convert.ToInt32(command.ExecuteScalar());
                     if (count > 0)
                     {
-                        string query = "update table product where ProductID = '" + textBox1.Text + "')";
+                        string query = "update product set ProductID = '" + textBox1.Text + "', ProductName = '" + textBox2.Text + "', ProductCategory= '" + textBox3.Text + "', ProductQuantity= '" + textBox4.Text + "', ProductPrice= '" + textBox5.Text + "' ";
                         command = new MySqlCommand(query, DatabaseClass.connection);
                         command.ExecuteNonQuery();
                         MessageBox.Show("Product information updated!");
 
                         DatabaseClass.closeConnection();
+                        fetchProduct();
                     }
                     else
                     {

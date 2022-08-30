@@ -95,7 +95,7 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(20, 223);
             this.textBox5.Name = "textBox5";
-            this.textBox5.PlaceholderText = "ProductCategory";
+            this.textBox5.PlaceholderText = "ProductPrice";
             this.textBox5.Size = new System.Drawing.Size(136, 23);
             this.textBox5.TabIndex = 5;
             // 
@@ -103,7 +103,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(20, 182);
             this.textBox4.Name = "textBox4";
-            this.textBox4.PlaceholderText = "ProductPrice";
+            this.textBox4.PlaceholderText = "ProductQuantity";
             this.textBox4.Size = new System.Drawing.Size(136, 23);
             this.textBox4.TabIndex = 4;
             // 
@@ -111,7 +111,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(20, 142);
             this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "ProductQuantity";
+            this.textBox3.PlaceholderText = "ProductCategory";
             this.textBox3.Size = new System.Drawing.Size(136, 23);
             this.textBox3.TabIndex = 3;
             // 

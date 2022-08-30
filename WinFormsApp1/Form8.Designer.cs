@@ -151,6 +151,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form8";
             this.Text = "Form8";
+            this.Load += new System.EventHandler(this.Form8_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

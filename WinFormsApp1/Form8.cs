@@ -19,6 +19,29 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
+
+        private void fetchProductCategory()
+        {
+            string query = "select * from productcategory";
+            DataSet ds = new DataSet();
+            DataView dv;
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            try
+            {
+                DatabaseClass.openConnection();
+                MySqlCommand command = new MySqlCommand(query, DatabaseClass.connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(ds);
+                DatabaseClass.closeConnection();
+
+                dv = ds.Tables[0].DefaultView;
+                dataGridView1.DataSource = dv;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void button4_Click(object sender, EventArgs e)
         {
             Form5 form5 = new Form5();
@@ -49,6 +72,7 @@ namespace WinFormsApp1
                         MessageBox.Show("New product category added succesfully!");
                        
                         DatabaseClass.closeConnection();
+                        fetchProductCategory();
                     }
                 }
                 catch (Exception st)
@@ -67,7 +91,7 @@ namespace WinFormsApp1
         {
             DatabaseClass.openConnection();
             MySqlCommand command;
-            if (textBox1.Text != "" & textBox2.Text != "")
+            if (textBox1.Text != "" )
             {
                 try
                 {
@@ -76,12 +100,13 @@ namespace WinFormsApp1
                     Int32 count = Convert.ToInt32(command.ExecuteScalar());
                     if (count > 0)
                     {
-                        string query = "delete from productcategory where PCatID = '" + textBox1.Text + "')";
+                        string query = "delete from productcategory where PCatID = '" + textBox1.Text + "'";
                         command = new MySqlCommand(query, DatabaseClass.connection);
                         command.ExecuteNonQuery();
                         MessageBox.Show("Product category removed!");
                         
                         DatabaseClass.closeConnection();
+                        fetchProductCategory();
                     }
                     else
                     {
@@ -116,12 +141,13 @@ namespace WinFormsApp1
                     Int32 count = Convert.ToInt32(command.ExecuteScalar());
                     if (count > 0)
                     {
-                        string query = "update table productcategory where PCatID = '" + textBox1.Text + "')";
+                        string query = "update productcategory set PCatID = '" + textBox1.Text + "', PCatName= '" + textBox2.Text + "'";
                         command = new MySqlCommand(query, DatabaseClass.connection);
                         command.ExecuteNonQuery();
                         MessageBox.Show("Product category information updated!");
                         
                         DatabaseClass.closeConnection();
+                        fetchProductCategory();
                     }
                     else
                     {
@@ -141,6 +167,11 @@ namespace WinFormsApp1
             {
                 MessageBox.Show("All fields are required!");
             }
+        }
+
+        private void Form8_Load(object sender, EventArgs e)
+        {
+            fetchProductCategory();
         }
     }
 }

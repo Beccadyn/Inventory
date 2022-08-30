@@ -19,12 +19,36 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
+
+        private void fetchUsers()
+        {
+            string query = "select * from usermanagement";
+            DataSet ds = new DataSet();
+            DataView dv;
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            try
+            {
+                DatabaseClass.openConnection();
+                MySqlCommand command = new MySqlCommand(query, DatabaseClass.connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(ds);
+                DatabaseClass.closeConnection();
+
+                dv = ds.Tables[0].DefaultView;
+                dataGridView1.DataSource = dv;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             DatabaseClass.openConnection();
             MySqlCommand command;
             if (textBox1.Text != "" & textBox2.Text != "")
-            {
+            { 
                 try
                 {
                     string countQuerry = "select count(*) from usermanagement where UserName = '" + textBox1.Text + "' ";
@@ -32,12 +56,14 @@ namespace WinFormsApp1
                     Int32 count = Convert.ToInt32(command.ExecuteScalar());
                     if (count > 0)
                     {
-                        string query = "update table usermanagement where UserName = '" + textBox1.Text + "')";
+                        string query = "update usermanagement set  UserName = '" + textBox1.Text + "', UserEmail= '" + textBox3.Text + "',UserPhone= '" + textBox4.Text + "', UserPassword = '" + textBox5.Text + "' where UserID ='" + textBox2.Text + "' ";
                         command = new MySqlCommand(query, DatabaseClass.connection);
                         command.ExecuteNonQuery();
                         MessageBox.Show("Attendant information updated!");
+
                         
                         DatabaseClass.closeConnection();
+                        fetchUsers();
                     }
                     else
                     {
@@ -83,12 +109,13 @@ namespace WinFormsApp1
                     }
                     else
                     {
-                        string query = "insert into usermanagement(UserID, UserName, UserEmail, UserPhone, UserPassword) values ('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "')";
+                        string query = "insert into usermanagement(UserID, UserName, UserEmail, UserPhone, UserPassword) values ('" + textBox2.Text + "', '" + textBox1.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "')";
                         command = new MySqlCommand(query, DatabaseClass.connection);
                         command.ExecuteNonQuery();
                         MessageBox.Show("New attendant added succesfully!");
                         
                        DatabaseClass.closeConnection();
+                        fetchUsers();
                     }
                 }
                 catch (Exception st)
@@ -107,7 +134,7 @@ namespace WinFormsApp1
         {
             DatabaseClass.openConnection();
             MySqlCommand command;
-            if (textBox1.Text != "" & textBox2.Text != "")
+            if (textBox1.Text != "")
             {
                 try
                 {
@@ -116,12 +143,13 @@ namespace WinFormsApp1
                     Int32 count = Convert.ToInt32(command.ExecuteScalar());
                     if (count > 0)
                     {
-                        string query = "delete from usermanagement where UserName = '" + textBox1.Text + "')";
+                        string query = "delete from usermanagement where UserName = '" + textBox1.Text + "'";
                         command = new MySqlCommand(query, DatabaseClass.connection);
                         command.ExecuteNonQuery();
                         MessageBox.Show("Attendant removed!");
                        
                         DatabaseClass.closeConnection();
+                        fetchUsers();
                     }
                     else
                     {
@@ -141,6 +169,11 @@ namespace WinFormsApp1
             {
                 MessageBox.Show("All fields are required!");
             }
+        }
+
+        private void Form9_Load(object sender, EventArgs e)
+        {
+            fetchUsers();
         }
     }
 }
